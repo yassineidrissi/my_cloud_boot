@@ -11,5 +11,8 @@ COPY main.py .
 # Step 4: Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Step 5: Run the bot
+# Step 5: Install Playwright browsers (required for Railway)
+RUN playwright install chromium
+
+# Step 6: Run the bot
 CMD ["python", "main.py"]
